@@ -1,0 +1,39 @@
+
+class %objectClass% extends \Formitize\API\Helper\Job\ObjectMultipleChoice
+{
+%const%
+
+	protected $objectType = "%objectType%";
+	protected $objectName = "%objectName%";
+	
+	private $value = array();
+
+	function setValue()
+	{
+		$args = func_get_args();
+		
+		$c = array_flip($this->value);
+		
+		foreach($args as $flag)
+		{
+			if(!isset($c[$flag]))
+				$this->value[] = $flag;
+		}
+			
+	}
+	
+	function getValue()
+	{
+		return $this->value;
+	}
+
+	function getObjectName()
+	{
+		return $this->objectName;
+	}
+
+	function getObjectType()
+	{
+		return $this->objectType;
+	}
+}

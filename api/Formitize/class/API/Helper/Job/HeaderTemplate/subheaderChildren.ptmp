@@ -1,0 +1,29 @@
+
+class %objectClass% extends \Formitize\API\Helper\Job\Object
+{
+
+	protected $objectType = "%objectType%";
+	protected $objectName = "%objectName%";
+
+	private $value = "";
+
+	function setValue($value)
+	{
+		$this->value = $value;
+	}
+	
+	function getValue()
+	{
+		return $this->value;
+	}
+
+	function getObjectName()
+	{
+		return $this->objectName;
+	}
+
+	function getObjectType()
+	{
+		return $this->objectType;
+	}
+}

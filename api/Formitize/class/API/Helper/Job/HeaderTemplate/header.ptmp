@@ -1,0 +1,17 @@
+<?php
+namespace Formitize\Job\Header\Form%id%;
+
+class Form%id% extends \Formitize\API\Helper\Job\Form
+{
+	public $formID = %id%;
+	public $objectlist = array(%list%);
+	
+%subheaders%
+	function __construct()
+	{
+%construct%
+	}
+%functions%
+}
+
+?>
