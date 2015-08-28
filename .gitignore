@@ -200,4 +200,6 @@ nbproject/private/
 nbproject/private/private.xml
 api/Formitize/class/Job/Header/
 
+examples/config.local.php
+
 *.zip
