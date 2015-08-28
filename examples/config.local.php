@@ -1,4 +1,4 @@
-?php
+<?php
 	
 	define("USER_COMPANY","");
 	define("USER_NAME","");
