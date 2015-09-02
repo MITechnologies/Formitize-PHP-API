@@ -76,7 +76,7 @@ class Helper
 		
 		$pos = strpos($dir, "/Formitize/class/");
 		
-		$store =  substr($dir, 0, $pos) . '/Formitize/class/Job/Header/Form' . $formID . '/';
+		$store =  substr($dir, 0, $pos) . '/Formitize/class/Job/Form/Form' . $formID . '/';
 		
 		if(!file_exists($store))
 		{
@@ -106,6 +106,8 @@ class Helper
 		$tSubheaderClass = str_replace(array("%id%"), $formID, $tSubheaderClass);
 		$tSubheaderVar = str_replace(array("%id%"), $formID, $tSubheaderVar);
 		$tHeaderFunc = str_replace(array("%id%"), $formID, $tHeaderFunc);
+		$tSHChildren = str_replace(array("%id%"), $formID, $tSHChildren);
+		$tSHChildrenMC = str_replace(array("%id%"), $formID, $tSHChildrenMC);
 		$tSHChildrenVar = str_replace(array("%id%"), $formID, $tSHChildrenVar);
 		
 		$constructor = array();
@@ -148,11 +150,11 @@ class Helper
 						
 						
 						echo str_replace(
-							array("%objectType%", "%objectName%", "%objectClass%", "%const%"),
-							array("formMultiple", addslashes($children['name']), $cClass, join("\n", $const)),
+							array("%objectType%", "%objectName%", "%objectClass%", "%const%", "%subheaderClass%"),
+							array("formMultiple", addslashes($children['name']), $cClass, join("\n", $const), $shClass),
 							$tSHChildrenMC);
 
-						$cConstructor[] = "\t\t" . '$this->' . $cClass . ' = new ' . $cClass. '();';
+						$cConstructor[] = "\t\t" . '$this->' . $cClass . ' = new ' . $cClass. '($this);';
 						$cList[] = '"' . $cClass . '"';
 						
 						$cvar[] = str_replace("%objectClass%", $cClass,$tSHChildrenVar);
@@ -161,11 +163,11 @@ class Helper
 					case 'formBarcode':
 						
 						echo str_replace(
-								array("%objectType%", "%objectName%", "%objectClass%"),
-								array("formMultiple", addslashes($children['name']), $cClass),
+								array("%objectType%", "%objectName%", "%objectClass%", "%subheaderClass%"),
+								array("formMultiple", addslashes($children['name']), $cClass, $shClass),
 								$tSHChildren);
 						
-						$cConstructor[] = "\t\t" . '$this->' . $cClass . ' = new ' . $cClass. '();';
+						$cConstructor[] = "\t\t" . '$this->' . $cClass . ' = new ' . $cClass. '($this);';
 						$cList[] = '"' . $cClass . '"';
 						
 						
@@ -196,7 +198,7 @@ class Helper
 		
 		$tHeader = str_replace(array("%subheaders%", "%construct%", "%functions%", "%list%"), array(ob_get_clean(), join("\n", $constructor), $functions, join(", ", $list)), $tHeader);
 		
-		file_put_contents($store . "Form{$formID}.php", $tHeader);
+		file_put_contents($store . "Form.php", $tHeader);
 		
 		
 				

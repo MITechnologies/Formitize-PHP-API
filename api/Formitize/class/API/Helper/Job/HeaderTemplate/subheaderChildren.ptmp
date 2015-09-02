@@ -6,10 +6,18 @@ class %objectClass% extends \Formitize\API\Helper\Job\Object
 	protected $objectName = "%objectName%";
 
 	private $value = "";
+	
 
+	
+	/**
+	* Returns a previously created %subheaderClass%
+	* @return \Formitize\Job\Form\Form%id%\%subheaderClass%
+	*/
 	function setValue($value)
 	{
 		$this->value = $value;
+		
+		return $this->parent;
 	}
 	
 	function getValue()

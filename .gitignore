@@ -199,7 +199,7 @@ nbproject
 nbproject/private/
 nbproject/private/private.xml
 api/Formitize/class/Job/Header/
-
+api/Formitize/class/Job/Form/
 examples/config.local.php
 
 *.zip

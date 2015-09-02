@@ -8,6 +8,10 @@ class %objectClass% extends \Formitize\API\Helper\Job\ObjectMultipleChoice
 	
 	private $value = array();
 
+	/**
+	* Returns a previously created %subheaderClass%
+	* @return \Formitize\Job\Form\Form%id%\%subheaderClass%
+	*/
 	function setValue()
 	{
 		$args = func_get_args();

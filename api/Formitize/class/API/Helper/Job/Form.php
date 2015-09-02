@@ -14,7 +14,7 @@ class Form
 		
 		foreach($this->objectlist as $var)
 		{
-			foreach($this->$var as $rc => $sh)
+			foreach($this->returnArray($var) as $rc => $sh)
 			{
 				foreach($sh->objectlist as $obj)
 				{

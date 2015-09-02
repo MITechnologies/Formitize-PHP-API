@@ -1,7 +1,7 @@
 <?php
-namespace Formitize\Job\Header\Form%id%;
+namespace Formitize\Job\Form\Form%id%;
 
-class Form%id% extends \Formitize\API\Helper\Job\Form
+class Form extends \Formitize\API\Helper\Job\Form
 {
 	public $formID = %id%;
 	public $objectlist = array(%list%);
@@ -11,6 +11,12 @@ class Form%id% extends \Formitize\API\Helper\Job\Form
 	{
 %construct%
 	}
+	
+	function returnArray($objName)
+	{
+		return $this->$objName;
+	}
+	
 %functions%
 }
 

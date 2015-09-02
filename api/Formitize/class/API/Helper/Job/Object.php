@@ -5,6 +5,13 @@ namespace Formitize\API\Helper\Job;
 
 	abstract class Object extends ObjectAbstract
 	{
+		public $parent = null;
+
+		function __construct(&$parent)
+		{
+			$this->parent = $parent;
+		}
+				
 		abstract function setValue($value);
 		abstract function getValue();
 		abstract function getObjectName();

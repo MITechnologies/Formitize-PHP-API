@@ -1,1 +1,1 @@
-	public $%subheaderClass% = array();
+	private $%subheaderClass% = array();

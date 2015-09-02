@@ -2,7 +2,7 @@
 	/**
 	* Creates a new %subheaderClass% 
 	* @param number $index - sets the repeated index. For repeated items when adding a new header be sure to increment the index number otherwise old entries are lost.
-	* @return \Formitize\Job\Header\Form%id%\%subheaderClass%
+	* @return \Formitize\Job\Form\Form%id%\%subheaderClass%
 	*/
 	function new_%subheaderClass%($index = 0)
 	{
@@ -15,7 +15,7 @@
 
 	/**
 	* Returns a previously created %subheaderClass%
-	* @return \Formitize\Job\Header\Form%id%\%subheaderClass%
+	* @return \Formitize\Job\Form\Form%id%\%subheaderClass%
 	*/
 	function get_%subheaderClass%($index = 0)
 	{

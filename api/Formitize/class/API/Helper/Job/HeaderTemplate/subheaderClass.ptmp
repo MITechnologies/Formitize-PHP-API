@@ -1,6 +1,6 @@
 <?php
 
-namespace Formitize\Job\Header\Form%id%;
+namespace Formitize\Job\Form\Form%id%;
 
 class %subheaderClass%
 {
