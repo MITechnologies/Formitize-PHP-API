@@ -21,8 +21,8 @@
 	if($formID == 0) throw new Exception("Please grab the formID from the Formitize website and replace here.");
 	
 	//only need to run this once as it will create source files under Formitize/Class/Job/Header/Form{$formID}/ - comment out after first run.
-	
 	Formitize\API\Helper\Helper::createFormJobHeader($client, $formID);
+	
 	$ns = "Formitize\Job\Header\Form{$formID}\Form{$formID}";
 	$form = new $ns();
 	
