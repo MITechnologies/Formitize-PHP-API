@@ -1,0 +1,5 @@
+	/**
+	* @var \Formitize\Job\Form\Form%id%\%objectClass%
+	**/
+	public $%objectClass% = null;
+	

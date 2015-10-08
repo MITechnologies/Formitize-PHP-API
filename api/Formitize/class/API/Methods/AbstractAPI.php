@@ -5,7 +5,7 @@ class AbstractAPI
 {
 	/**
 	 * 
-	 * @var \Formitize\API\AbstractClient
+	 * @var \Formitize\API\Client\AbstractClient
 	 */
 	public $client = null;
 	

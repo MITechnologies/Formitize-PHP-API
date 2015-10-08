@@ -1,0 +1,37 @@
+
+class %objectClass% extends \Formitize\API\Helper\SubmittedForm\Object
+{
+
+	protected $objectType = "%objectType%";
+	protected $objectName = "%objectName%";
+
+	private $value = "";
+	
+
+	
+	/**
+	* Returns a previously created %subheaderClass%
+	* @return \Formitize\Form\Form\Form%id%\%subheaderClass%
+	*/
+	function setValue($value)
+	{
+		$this->value = $value;
+		
+		return $this->parent;
+	}
+	
+	function getValue()
+	{
+		return $this->value;
+	}
+
+	function getObjectName()
+	{
+		return $this->objectName;
+	}
+
+	function getObjectType()
+	{
+		return $this->objectType;
+	}
+}

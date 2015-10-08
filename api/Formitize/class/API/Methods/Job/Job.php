@@ -21,6 +21,13 @@ class Job extends \Formitize\API\Methods\AbstractAPI
 		return $this->client->post("job/", $job->getData());
 	}
 	
+	function getJobs(\Formitize\Job\GetJobRequest $job = null)
+	{
+		$params = array();
+		if(!is_null($job)) $params = $job->getParams();
+		
+		return $this->client->get("job/", $params);
+	}
 
 }
 ?>

@@ -29,8 +29,17 @@ abstract class AbstractClient
 	{
 		return $this->returnClass("\Formitize\API\Methods\Form\Form", $this);
 	}
-	
 
+	/**
+	 *
+	 * @return \Formitize\API\Methods\Form\SubmittedForm
+	 */
+	
+	public function SubmittedForm()
+	{
+		return $this->returnClass("\Formitize\API\Methods\Form\SubmittedForm", $this);
+	}	
+	
 	/**
 	 *
 	 * @return \Formitize\API\Methods\Job\Job
@@ -53,9 +62,9 @@ abstract class AbstractClient
 	 *
 	 * @return \Formitize\API\Methods\Webhook\SubmittedForm
 	 */
-	public function WebHookSubmittedForm()
+	public function Webhooks()
 	{
-		return $this->returnClass("\Formitize\API\Methods\Webhook\SubmittedForm", $this);
+		return $this->returnClass("\Formitize\API\Methods\Webhooks\Webhook", $this);
 	}
 		
 }

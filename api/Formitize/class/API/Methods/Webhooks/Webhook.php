@@ -2,7 +2,7 @@
 
 namespace Formitize\API\Methods\Webhooks;
 
-class SubmittedForm extends \Formitize\API\Methods\AbstractAPI
+class Webhook extends \Formitize\API\Methods\AbstractAPI
 {
 	/**
 	 * Will create a webhook, on error will return typical error message - can catch with the Exception class.

@@ -1,0 +1,44 @@
+
+class %objectClass% extends \Formitize\API\Helper\SubmittedForm\ObjectMultipleChoice
+{
+
+	protected $objectType = "%objectType%";
+	protected $objectName = "%objectName%";
+	
+	private $value = array();
+	
+	/**
+	* Returns a previously created %subheaderClass%, attach multiple photo arguements
+	* @return \Formitize\Form\Form\Form%id%\%subheaderClass%
+	*/
+	function setValue()
+	{
+		$args = func_get_args();
+		
+		$c = array_flip($this->value);
+		
+		foreach($args as $flag)
+		{
+			if(!isset($c[$flag]))
+			{
+				$this->value[] = $flag;
+			}
+		}
+			
+	}
+	
+	function getValue()
+	{
+		return $this->value;
+	}
+
+	function getObjectName()
+	{
+		return $this->objectName;
+	}
+
+	function getObjectType()
+	{
+		return $this->objectType;
+	}
+}

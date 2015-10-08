@@ -1,0 +1,18 @@
+<?php
+
+namespace Formitize\Job\Form\Form%id%;
+
+class %subheaderClass%
+{
+	public $objectlist = array(%list%);
+	
+%children%
+
+		
+	function __construct()
+	{
+%construct%
+	}
+}
+%objects%
+?>

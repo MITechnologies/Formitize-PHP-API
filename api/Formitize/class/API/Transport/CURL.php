@@ -66,15 +66,16 @@ class CURL extends AbstractTransport
 		}
 	}
 	
-	function get($url, $data = array())
+	function get($url, $data = array(), $post = false)
 	{
 		
-		$l = array();
-		foreach($data as $k=>$v)
-			$l[] = "{$k}={$v}";
+			
+			$l = array();
+			foreach($data as $k=>$v)
+				$l[] = "{$k}={$v}";
 		
+			$url .= '?' . join("&", $l);
 		
-		$url .= '?' . join("&", $l);
 		
 		$this->authenticate($url);
 		curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, 'GET');

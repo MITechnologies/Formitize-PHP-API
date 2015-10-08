@@ -1,0 +1,23 @@
+<?php
+namespace Formitize\Form\Form\Form%id%;
+
+class Form extends \Formitize\API\Helper\SubmittedForm\Form
+{
+	public $formID = %id%;
+	public $objectlist = array(%list%);
+	
+%subheaders%
+	function __construct()
+	{
+%construct%
+	}
+	
+	function returnArray($objName)
+	{
+		return $this->$objName;
+	}
+	
+%functions%
+}
+
+?>
