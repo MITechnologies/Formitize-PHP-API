@@ -104,16 +104,16 @@ class Job
 		
 		return array(
 			"id" => $this->id,
-			"Title" => $this->Title,
-			"JobNumber" => $this->JobNumber,
-			"OrderNumber" => $this->OrderNumber,
-			"Agent" => $this->Agent,
-			"SendNotification" => $this->SendNotificaiton,
-			"Priority" => $this->Priority,
-			"Form" => $this->Forms,
-			"FormData" => $fd,
-			"DueDate" => date("Y-m-d H:i:s", $this->DueDate),
-			"Duration" => $this->Duration
+			"title" => $this->Title,
+			"jobNumber" => $this->JobNumber,
+			"orderNumber" => $this->OrderNumber,
+			"agent" => $this->Agent,
+			"sendNotification" => $this->SendNotificaiton,
+			"priority" => $this->Priority,
+			"form" => $this->Forms,
+			"formData" => $fd,
+			"dueDate" => date("Y-m-d H:i:s", $this->DueDate),
+			"duration" => $this->Duration
 		);
 	}
 }
