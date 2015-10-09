@@ -40,6 +40,16 @@ class SubmittedForm extends \Formitize\API\Methods\AbstractAPI
 		
 	}
 	
+	function getData($submittedFormID)
+	{
+		if(is_array($submittedFormID))
+			$submittedFormID = join(",", $submittedFormID);
+			
+		return $this->client->get("form/submit/", array(
+				"id" => $submittedFormID
+		));
+	}
+	
 	function getList($page = 1, SubmittedFormListOptions $opts = null)
 	{
 		$params = array("simple" => true, "page" => $page);

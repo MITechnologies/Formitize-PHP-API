@@ -111,7 +111,24 @@ class CURL extends AbstractTransport
 	
 	function delete($url, $data = array())
 	{
+		$this->authenticate($url);
+		
+		$data_string = json_encode($data);
+		
+		
+		curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(
+				'Content-Type: application/json',
+				'Content-Length: ' . strlen($data_string))
+		);
+		curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data_string);
 
+		curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+		$response = curl_exec($this->curl);
+		
+		$this->close();
+		
+		
+		return $response;
 	}
 }
 ?>
