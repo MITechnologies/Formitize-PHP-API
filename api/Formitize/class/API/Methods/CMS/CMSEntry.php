@@ -6,6 +6,11 @@ class CMSEntry
 {
 	private $data = array();
 	
+	function __construct($d = array()) 
+	{
+		$this->data = $d;
+	}
+	
 	public function setValue($key, $val)
 	{
 		$this->data[$key] =  $val;

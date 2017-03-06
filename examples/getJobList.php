@@ -20,5 +20,4 @@
 	
 	$results = $client->Job()->getJobs($req);
 	
-	print_r($results);
 ?>

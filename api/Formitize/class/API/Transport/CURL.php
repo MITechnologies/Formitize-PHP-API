@@ -70,11 +70,7 @@ class CURL extends AbstractTransport
 	{
 		
 			
-			$l = array();
-			foreach($data as $k=>$v)
-				$l[] = "{$k}={$v}";
-		
-			$url .= '?' . join("&", $l);
+		$url .= '?' . http_build_query($data);
 		
 		
 		$this->authenticate($url);
@@ -111,17 +107,11 @@ class CURL extends AbstractTransport
 	
 	function delete($url, $data = array())
 	{
+		$url .= '?' . http_build_query($data);
+
+		
 		$this->authenticate($url);
 		
-		$data_string = json_encode($data);
-		
-		
-		curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(
-				'Content-Type: application/json',
-				'Content-Length: ' . strlen($data_string))
-		);
-		curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data_string);
-
 		curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
 		$response = curl_exec($this->curl);
 		
