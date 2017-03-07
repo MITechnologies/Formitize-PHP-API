@@ -65,7 +65,7 @@ class Job
 		$this->Forms[$formID] = $formID;
 	}
 	
-	public function attachJobForm(\Formitize\API\Helper\Job\Form &$form)
+	public function attachJobForm(\Formitize\Job\Form &$form)
 	{
 		//attach these and process when request to send, to keep data up to date.
 		if(isset($this->AttachedForms[$form->formID]))
@@ -98,7 +98,7 @@ class Job
 		{
 			$this->Forms[$formID] = $formID;
 			
-			$fd[$formID] = $attached->prepareForJobSubmission();
+			$fd[$formID] = $attached->Data;
 		}
 		
 		
