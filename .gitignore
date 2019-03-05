@@ -203,3 +203,4 @@ api/Formitize/class/Job/Form/
 examples/config.local.php
 
 *.zip
+.vscode/
