@@ -18,6 +18,16 @@ class GetJobRequest extends \Formitize\API\Methods\Request\Get
 	{
 		$this->params['id'] = $id;
 	}
+
+	function setOrderNumber($orderNumber)
+	{
+		$this->params['ordernumber'] = $orderNumber;
+	}
+
+	function setJobNumber($jobNumber)
+	{
+		$this->params['jobnumber'] = $jobNumber;
+	}
 }
 
 
