@@ -9,15 +9,14 @@
 	
 	$cred = Formitize\API::CreateCredentials();
 	
-	$client = Formitize\API::RESTClient($cred);
-	
-	
 	$cred->setCompanyName(USER_COMPANY);
 	$cred->setUserName(USER_NAME);
 	$cred->setPassword(USER_PW);
 	
-	$req = new \Formitize\Job\GetJobRequest();
+	$client = Formitize\API::RESTClient($cred);
 	
+	$req = new \Formitize\Job\GetJobRequest();
+	//$req->setJobNumber("xxx"); //search by job number.
 	$results = $client->Job()->getJobs($req);
 	
 ?>
