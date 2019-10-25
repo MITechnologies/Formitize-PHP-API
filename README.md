@@ -8,7 +8,7 @@ Work in progress PHP API will update over time, please  view the wiki for usage 
 - Install via composer
 
 ```sh
-php composer.phar require MITechnologies/Formitize-PHP-API
+php composer.phar require mitechnologies/formitize-php-api
 ```
 
 ## Without composer
