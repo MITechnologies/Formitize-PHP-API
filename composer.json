@@ -1,0 +1,17 @@
+{
+    "name": "MITechnologies/Formitize-PHP-API",
+    "type": "library",
+    "description": "PHP API for Formitize",
+    "keywords": ["api","formitize","php"],
+    "homepage": "https://formitize.com",
+    "license": "MIT",
+    "authors": [{
+        "name": "Formitize",
+        "email": "developer@formitize.com"
+    }],
+    "autoload": {
+        "files": [
+            "api/Formitize/autoload.inc.php"
+        ]
+    }
+}
