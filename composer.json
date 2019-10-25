@@ -1,7 +1,6 @@
 {
     "name": "mitechnologies/formitize-php-api",
     "type": "library",
-    "version": "0.5",
     "support": {"email": "support@formitize.com"},
     "description": "PHP API for Formitize",
     "keywords": ["api","formitize","php"],
