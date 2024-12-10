@@ -17,6 +17,7 @@ class Job
 	
 	public $id = 0;
 	public $Title = "";
+	public $JobType = "";
 	public $JobNumber = "";
 	public $OrderNumber = "";
 	public $Notes = "";
@@ -25,6 +26,12 @@ class Job
 	public $Location = "";
 	public $SendNotificaiton = true;
 	public $Duration = 1;
+	public $DeliveryLocation = "";
+	public $SiteName = "";
+	public $DeliveryContact = "";
+	public $DeliveryNotes = "";
+	public $DeliveryPhone = "";
+	public $DeliveryDate = 0;
 	
 	/**
 	 * Add to this array (key => value dictionary) and this response will be returned to you if you have WebHook Notifications set up for once this Job has been completed on Formitize.
@@ -105,6 +112,7 @@ class Job
 		return array(
 			"id" => $this->id,
 			"title" => $this->Title,
+			"jobType" => $this->JobType,
 			"jobNumber" => $this->JobNumber,
 			"orderNumber" => $this->OrderNumber,
 			"agent" => $this->Agent,
@@ -113,7 +121,14 @@ class Job
 			"form" => $this->Forms,
 			"formData" => $fd,
 			"dueDate" => date("Y-m-d H:i:s", $this->DueDate),
-			"duration" => $this->Duration
+			"duration" => $this->Duration,
+			"location" => $this->Location,
+			"deliveryLocation" => $this->DeliveryLocation,
+			"SiteName" => $this->SiteName,
+			"deliveryContact" => $this->DeliveryContact,
+			"deliveryNotes" => $this->DeliveryNotes,
+			"deliveryPhone" => $this->DeliveryPhone,
+			"deliveryDate" => $this->DeliveryDate != 0 ? date("Y-m-d H:i:s", $this->DeliveryDate) : 0,
 		);
 	}
 }
